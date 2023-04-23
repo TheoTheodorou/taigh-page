@@ -11,7 +11,7 @@ const Home = () => {
     },
     {
       imageSrc: "/src/Resources/images/Photography/India_Couple.jpg",
-      titleSrc: "/src/Resources/images/photo_Banner.jpg",
+      titleSrc: "photo_Banner.jpg",
       href: "/",
     },
   ];
