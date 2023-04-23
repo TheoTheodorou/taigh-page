@@ -6,7 +6,7 @@ const Home = () => {
     {
       imageSrc:
         "https://images.squarespace-cdn.com/content/v1/5e7b455293633531355748f4/1603849852926-FK0MXGAFOGPACP4UUPHP/Gif_Export_3.gif",
-      titleSrc: "/src/Resources/images/Video_Banner.jpg",
+      titleSrc: "/dist/assets/Video_Banner.jpg",
       href: "/",
     },
     {
