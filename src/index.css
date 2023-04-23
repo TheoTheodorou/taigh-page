@@ -1,10 +1,10 @@
-@import 'tailwindcss/base';
+@import "tailwindcss/base";
 
-@import 'tailwindcss/components';
+@import "tailwindcss/components";
 
-@import 'tailwindcss/utilities';
+@import "tailwindcss/utilities";
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 /* Base */
 @layer base {
@@ -12,7 +12,15 @@
     @apply font-poppins;
   }
 
+  .container {
+    @apply px-10;
+    @apply pb-10;
+    @apply w-full;
+    @apply m-auto;
+  }
+
   body {
+    @apply h-screen;
   }
 
   h1 {
@@ -21,24 +29,7 @@
   }
 
   nav {
-    @apply p-10;
-    @apply sticky;
-    @apply w-screen;
-    @apply flex;
-    @apply flex-nowrap;
-    @apply justify-between;
-    @apply items-center;
-
-    @apply top-0;
-    @apply left-0;
-
     /* top-0 left-0 border-b border-gray-600 */
-  }
-
-  .nav-icons {
-    @apply text-xl;
-    @apply ml-8;
-    @apply mr-3;
   }
 }
 
