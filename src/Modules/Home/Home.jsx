@@ -6,13 +6,22 @@ const Home = () => {
     {
       imageSrc:
         "https://images.squarespace-cdn.com/content/v1/5e7b455293633531355748f4/1603849852926-FK0MXGAFOGPACP4UUPHP/Gif_Export_3.gif",
-      titleSrc: "/dist/assets/Video_Banner.jpg",
-      href: "/",
+      titleSrc: new URL(
+        "/src/Resources/images/Assets/Video_Banner.jpg",
+        import.meta.url
+      ).href,
+      href: "/video",
     },
     {
-      imageSrc: "/src/Resources/images/Photography/India_Couple.jpg",
-      titleSrc: "photo_Banner.jpg",
-      href: "/",
+      imageSrc: new URL(
+        "/src/Resources/images/Photography/India_Couple.jpg",
+        import.meta.url
+      ).href,
+      titleSrc: new URL(
+        "/src/Resources/images/Assets/photo_Banner.jpg",
+        import.meta.url
+      ).href,
+      href: "/photo",
     },
   ];
 
