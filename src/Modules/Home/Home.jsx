@@ -28,15 +28,15 @@ const Home = () => {
   return (
     <div className="">
       <img
-        className="mx-auto w-full object-fill"
+        className="mx-auto h-auto object-fill p-12"
         src={
           new URL("/src/Resources/assets/Banner-3.jpg", import.meta.url).href
         }
         alt=""
       />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl py-16  lg:max-w-none lg:py-32">
-          <div className="mt-6 space-y-12 lg:grid lg:grid-cols-2 lg:gap-x-12 lg:space-y-0">
+        <div className="mx-auto max-w-2xl lg:max-w-none lg:py-8">
+          <div className="mt-6 space-y-12 lg:grid lg:grid-cols-2 lg:gap-x-24 lg:space-y-0">
             {cards.map((card) => (
               <Card
                 link1={card.imageSrc}
