@@ -30,7 +30,7 @@ const Home = () => {
       <img
         className="mx-auto w-full object-fill"
         src={
-          new URL("/src/Resources/Assets/Banner-3.jpg", import.meta.url).href
+          new URL("/src/Resources/assets/Banner-3.jpg", import.meta.url).href
         }
         alt=""
       />
