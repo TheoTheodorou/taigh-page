@@ -7,18 +7,18 @@ const Home = () => {
       imageSrc:
         "https://images.squarespace-cdn.com/content/v1/5e7b455293633531355748f4/1603849852926-FK0MXGAFOGPACP4UUPHP/Gif_Export_3.gif",
       titleSrc: new URL(
-        "/src/Resources/images/Assets/Video_Banner.jpg",
+        "/src/Resources/Assets/Video_Banner.jpg",
         import.meta.url
       ).href,
       href: "/video",
     },
     {
       imageSrc: new URL(
-        "/src/Resources/images/photo/India_Couple.jpg",
+        "/src/Resources/photo/India_Couple.jpg",
         import.meta.url
       ).href,
       titleSrc: new URL(
-        "/src/Resources/images/Assets/photo_Banner.jpg",
+        "/src/Resources/Assets/photo_Banner.jpg",
         import.meta.url
       ).href,
       href: "/photo",
@@ -30,8 +30,7 @@ const Home = () => {
       <img
         className="mx-auto w-full object-fill"
         src={
-          new URL("/src/Resources/images/Assets/Banner-3.jpg", import.meta.url)
-            .href
+          new URL("/src/Resources/Assets/Banner-3.jpg", import.meta.url).href
         }
         alt=""
       />
