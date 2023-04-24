@@ -101,7 +101,7 @@ const Navbar = () => {
       <div className="">
         <a href="/" className="align-top">
           <img
-            className="max-h-14 w-full"
+            className="max-h-14"
             src={
               new URL("/src/Resources/assets/Watermark.png", import.meta.url)
                 .href
