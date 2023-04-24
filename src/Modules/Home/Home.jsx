@@ -14,7 +14,7 @@ const Home = () => {
     },
     {
       imageSrc: new URL(
-        "/src/Resources/images/Photography/India_Couple.jpg",
+        "/src/Resources/images/photo/India_Couple.jpg",
         import.meta.url
       ).href,
       titleSrc: new URL(
