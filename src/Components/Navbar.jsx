@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import React from "react";
+import React, { useRef, useState } from "react";
 
 import {
   FaInstagram,
@@ -9,8 +9,10 @@ import {
 } from "react-icons/fa";
 
 const Navbar = () => {
+  const [navBarOpen, setNavBarOpen] = useState(false);
+
   const styles = {
-    className: "",
+    className: "hover:underline",
     activeClassName: "underline",
   };
 
@@ -84,19 +86,34 @@ const Navbar = () => {
 
   return (
     <nav className="sticky left-0 top-0 z-50 flex w-full flex-nowrap items-center justify-between bg-white p-4">
-      <ul className="hidden basis-1/3 md:flex md:flex-wrap md:gap-4">
-        {links.map((link) => (
-          <NavLink
-            key={link.id}
-            className={({ isActive }) =>
-              isActive ? link.activeClassName : link.className
-            }
-            to={link.to}
-          >
-            {link.name}
-          </NavLink>
-        ))}
-      </ul>
+      <div
+        className={
+          navBarOpen
+            ? "fixed left-0 top-0 h-screen w-full basis-1/3 justify-center bg-white align-middle md:static md:h-auto"
+            : "fixed hidden h-screen w-full basis-1/3  bg-white md:static md:flex md:h-auto"
+        }
+      >
+        <ul
+          className={
+            navBarOpen
+              ? "flex h-full w-full flex-col justify-center text-center align-middle md:flex md:h-auto md:flex-row md:flex-wrap md:gap-4"
+              : "flex h-full w-full flex-col  text-center align-middle md:flex md:h-auto md:flex-row md:flex-wrap md:gap-4"
+          }
+        >
+          {links.map((link) => (
+            <NavLink
+              key={link.id}
+              className={({ isActive }) =>
+                isActive ? link.activeClassName : link.className
+              }
+              to={link.to}
+              onClick={() => setNavBarOpen(false)}
+            >
+              {link.name}
+            </NavLink>
+          ))}
+        </ul>
+      </div>
 
       <div className="">
         <a href="/" className="align-top">
@@ -119,7 +136,28 @@ const Navbar = () => {
         ))}
       </ul>
 
-      <div className="md:hidden">O</div>
+      <button
+        data-collapse-toggle="navbar-hamburger"
+        type="button"
+        className="ml-3 inline-flex  rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 md:hidden"
+        aria-controls="navbar-hamburger"
+        aria-expanded="false"
+        onClick={() => setNavBarOpen((prev) => !prev)}
+      >
+        <svg
+          class="h-6 w-6"
+          aria-hidden="true"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+            clip-rule="evenodd"
+          ></path>
+        </svg>
+      </button>
     </nav>
   );
 };
