@@ -4,10 +4,12 @@ function Card(props) {
   return (
     <div className="group relative">
       <div className="  relative h-auto w-full overflow-hidden rounded-lg bg-white group-hover:opacity-75 ">
-        <img
-          src={props.link1}
-          className="h-full w-full object-cover object-center"
-        />
+        <a href={props.href}>
+          <img
+            src={props.link1}
+            className="h-full w-full object-cover object-center"
+          />
+        </a>
       </div>
       <img src={props.link2} className="w-full" />
     </div>

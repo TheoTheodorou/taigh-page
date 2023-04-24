@@ -41,6 +41,7 @@ const Home = () => {
               link1={card.imageSrc}
               link2={card.titleSrc}
               classname={card.classname}
+              href={card.href}
             ></Card>
           ))}
         </div>
