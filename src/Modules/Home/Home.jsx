@@ -7,7 +7,7 @@ const Home = () => {
       imageSrc:
         "https://images.squarespace-cdn.com/content/v1/5e7b455293633531355748f4/1603849852926-FK0MXGAFOGPACP4UUPHP/Gif_Export_3.gif",
       titleSrc: new URL(
-        "/src/Resources/Assets/Video_Banner.jpg",
+        "/src/Resources/assets/Video_Banner.jpg",
         import.meta.url
       ).href,
       href: "/video",
@@ -18,7 +18,7 @@ const Home = () => {
         import.meta.url
       ).href,
       titleSrc: new URL(
-        "/src/Resources/Assets/photo_Banner.jpg",
+        "/src/Resources/assets/photo_Banner.jpg",
         import.meta.url
       ).href,
       href: "/photo",
