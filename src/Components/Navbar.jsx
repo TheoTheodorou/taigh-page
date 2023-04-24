@@ -83,7 +83,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="sticky left-0 top-0 z-50 flex w-screen flex-nowrap items-center justify-between bg-white p-4">
+    <nav className="sticky left-0 top-0 z-50 flex w-full flex-nowrap items-center justify-between bg-white p-4">
       <ul className="hidden basis-1/3 md:flex md:flex-wrap md:gap-4">
         {links.map((link) => (
           <NavLink

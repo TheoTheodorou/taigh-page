@@ -28,23 +28,21 @@ const Home = () => {
   return (
     <div className="">
       <img
-        className="mx-auto h-auto object-fill p-12"
+        className="mx-auto h-auto object-fill "
         src={
           new URL("/src/Resources/assets/Banner-3.jpg", import.meta.url).href
         }
         alt=""
       />
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl lg:max-w-none lg:py-8">
-          <div className="mt-6 space-y-12 lg:grid lg:grid-cols-2 lg:gap-x-24 lg:space-y-0">
-            {cards.map((card) => (
-              <Card
-                link1={card.imageSrc}
-                link2={card.titleSrc}
-                classname={card.classname}
-              ></Card>
-            ))}
-          </div>
+      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="xl:gap-x-30 mt-6 space-y-12 lg:grid lg:grid-cols-2 lg:gap-x-20 lg:space-y-0">
+          {cards.map((card) => (
+            <Card
+              link1={card.imageSrc}
+              link2={card.titleSrc}
+              classname={card.classname}
+            ></Card>
+          ))}
         </div>
       </div>
     </div>

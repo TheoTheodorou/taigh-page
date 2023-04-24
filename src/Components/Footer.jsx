@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="fixed bottom-0 left-0 w-full bg-white py-6 text-center">
+    <footer className="bottom-0 left-0 w-full bg-white py-6 text-center">
       <div className="space-x-4">
         <a className="bold  underline" href="mailto:taighromanczuk@gmail.com">
           Email

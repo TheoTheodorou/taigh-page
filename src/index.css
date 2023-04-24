@@ -15,12 +15,14 @@
   .container {
     @apply px-10;
     @apply pb-10;
-    @apply w-full;
+    @apply w-screen;
     @apply m-auto;
   }
 
   body {
     @apply h-screen;
+    @apply w-full;
+    @apply overflow-x-hidden;
   }
 
   h1 {

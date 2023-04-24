@@ -3,7 +3,10 @@ import React from "react";
 const Photo = () => {
   return (
     <div>
-      <img src="/src/Resources/images/Photography/Aybee_7.jpg" alt="" />
+      <img
+        src={new URL("/src/Resources/photo/Aybee_7.jpg", import.meta.url).href}
+        alt=""
+      />
     </div>
   );
 };
