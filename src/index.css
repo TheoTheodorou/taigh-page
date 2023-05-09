@@ -30,8 +30,20 @@
     @apply font-bold;
   }
 
-  nav {
-    /* top-0 left-0 border-b border-gray-600 */
+  h2 {
+    @apply text-3xl;
+  }
+
+  h3 {
+    @apply text-xl;
+    @apply font-light;
+    @apply stretch;
+  }
+
+  h4 {
+  }
+
+  p {
   }
 }
 
