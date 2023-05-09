@@ -37,7 +37,6 @@
   h3 {
     @apply text-xl;
     @apply font-light;
-    @apply stretch;
   }
 
   h4 {
