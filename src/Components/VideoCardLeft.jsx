@@ -9,8 +9,9 @@ const VideoCardLeft = (props) => {
         <p className="whitespace-pre-wrap">{props.text}</p>
       </div>
       <iframe
-        width="560"
-        height="315"
+        className="rounded-xl"
+        width="960"
+        height="540"
         src={props.src}
         title={props.title}
         frameborder="0"
