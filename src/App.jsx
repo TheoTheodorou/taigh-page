@@ -31,7 +31,6 @@ function App() {
           path="/photo"
           element={
             <React.Suspense fallback="Loading...">
-              <Video />
               <Photo />
             </React.Suspense>
           }
@@ -40,7 +39,6 @@ function App() {
           path="/commercial"
           element={
             <React.Suspense fallback="Loading...">
-              <Video />
               <Commercial />
             </React.Suspense>
           }
@@ -49,7 +47,6 @@ function App() {
           path="/about"
           element={
             <React.Suspense fallback="Loading...">
-              <Video />
               <About />
             </React.Suspense>
           }
@@ -58,7 +55,6 @@ function App() {
           path="/contact"
           element={
             <React.Suspense fallback="Loading...">
-              <Video />
               <Contact />
             </React.Suspense>
           }
