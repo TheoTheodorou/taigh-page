@@ -17,9 +17,9 @@ const VideoCardLeft = (props) => {
         ></iframe>
       </div>
       <div className="gap-x-4 rounded-md py-10">
-        <div className="mx-auto flex min-h-full max-w-xl flex-col justify-center gap-y-8 p-10 text-center">
+        <div className="mx-auto flex min-h-full max-w-xl flex-col justify-center gap-y-8 p-10 text-center xl:text-left">
           <h2 className="">{props.title}</h2>
-          <h3 className="text-center tracking-widest">{props.subtitle}</h3>
+          <h3 className="tracking-widest">{props.subtitle}</h3>
           <p className="whitespace-pre-wrap">{props.text}</p>
         </div>
       </div>

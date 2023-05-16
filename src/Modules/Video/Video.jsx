@@ -78,8 +78,9 @@ const Video = () => {
 
   return (
     <div className="flex min-h-screen flex-col justify-center gap-20">
-      {cards.map((card, i) =>
-        i % 2 === 0 ? (
+      {cards.map(
+        (card, i) => (
+          // i % 2 === 0 ? (
           <VideoCardLeft
             key={card.id}
             title={card.title}
@@ -87,15 +88,15 @@ const Video = () => {
             text={card.text}
             src={card.src}
           />
-        ) : (
-          <VideoCardRight
-            key={card.id}
-            title={card.title}
-            subtitle={card.subtitle}
-            text={card.text}
-            src={card.src}
-          />
         )
+        // ) : (
+        //   <VideoCardRight
+        //     key={card.id}
+        //     title={card.title}
+        //     subtitle={card.subtitle}
+        //     text={card.text}
+        //     src={card.src}
+        //   />
       )}
     </div>
   );
