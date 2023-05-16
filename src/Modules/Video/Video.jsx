@@ -77,7 +77,7 @@ const Video = () => {
   ];
 
   return (
-    <div className="flex h-full flex-col gap-36">
+    <div className="flex min-h-screen flex-col justify-center gap-20">
       {cards.map((card, i) =>
         i % 2 === 0 ? (
           <VideoCardLeft

@@ -48,7 +48,4 @@
 
 /* Components */
 @layer components {
-  .video-card {
-    @apply flex flex-wrap justify-center gap-x-4 rounded-md py-10;
-  }
 }
