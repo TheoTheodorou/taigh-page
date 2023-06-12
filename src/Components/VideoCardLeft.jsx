@@ -10,9 +10,9 @@ const VideoCardLeft = (props) => {
           height="540"
           src={props.src}
           title={props.title}
-          frameborder="0"
+          frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
-          allowfullscreen
+          allowFullScreen
           loading="lazy"
         ></iframe>
       </div>

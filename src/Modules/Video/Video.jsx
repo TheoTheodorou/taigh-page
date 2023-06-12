@@ -81,13 +81,7 @@ const Video = () => {
       {cards.map(
         (card, i) => (
           // i % 2 === 0 ? (
-          <VideoCardLeft
-            key={card.id}
-            title={card.title}
-            subtitle={card.subtitle}
-            text={card.text}
-            src={card.src}
-          />
+          <VideoCardLeft key={card.id} {...card} />
         )
         // ) : (
         //   <VideoCardRight

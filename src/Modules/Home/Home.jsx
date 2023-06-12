@@ -4,6 +4,7 @@ import Card from "../../Components/Card";
 const Home = () => {
   const cards = [
     {
+      id: 1,
       imageSrc:
         "https://images.squarespace-cdn.com/content/v1/5e7b455293633531355748f4/1603849852926-FK0MXGAFOGPACP4UUPHP/Gif_Export_3.gif",
       titleSrc: new URL(
@@ -13,6 +14,7 @@ const Home = () => {
       href: "/video",
     },
     {
+      id: 2,
       imageSrc: new URL(
         "/src/Resources/photo/India_Couple.jpg",
         import.meta.url
@@ -37,12 +39,7 @@ const Home = () => {
       <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="xl:gap-x-30 mt-6 space-y-12 lg:grid lg:grid-cols-2 lg:gap-x-20 lg:space-y-0">
           {cards.map((card) => (
-            <Card
-              link1={card.imageSrc}
-              link2={card.titleSrc}
-              classname={card.classname}
-              href={card.href}
-            ></Card>
+            <Card key={card.id} {...card} />
           ))}
         </div>
       </div>
