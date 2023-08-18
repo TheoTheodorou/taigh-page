@@ -1,6 +1,5 @@
 import React from "react";
-import VideoCardLeft from "../../Components/VideoCardLeft";
-import VideoCardRight from "../../Components/VideoCardRight";
+import VideoCard from "../../Components/VideoCard";
 
 const Video = () => {
   const cards = [
@@ -78,26 +77,16 @@ const Video = () => {
 
   return (
     <div className="flex min-h-screen flex-col justify-center gap-20">
-      {cards.map(
-        (card, i) => (
-          // i % 2 === 0 ? (
-          <VideoCardLeft
-            key={card.id}
-            title={card.title}
-            subtitle={card.subtitle}
-            text={card.text}
-            src={card.src}
-          />
-        )
-        // ) : (
-        //   <VideoCardRight
-        //     key={card.id}
-        //     title={card.title}
-        //     subtitle={card.subtitle}
-        //     text={card.text}
-        //     src={card.src}
-        //   />
-      )}
+      {cards.map((card, i) => (
+        <VideoCard
+          key={card.id}
+          title={card.title}
+          subtitle={card.subtitle}
+          text={card.text}
+          src={card.src}
+          alternate={i % 2 !== 0} // This will toggle the alternate prop for every card
+        />
+      ))}
     </div>
   );
 };
