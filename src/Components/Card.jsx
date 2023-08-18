@@ -7,13 +7,13 @@ function Card(props) {
       <div className="  relative h-auto w-full overflow-hidden rounded-lg bg-white group-hover:opacity-75 ">
         <Link to={props.href}>
           <img
-            src={props.link1}
+            src={props.imageSrc}
             className="h-full w-full object-cover object-center"
             to={props.href}
           />
+          <img src={props.titleSrc} className="w-full" />
         </Link>
       </div>
-      <img src={props.link2} className="w-full" />
     </div>
   );
 }
