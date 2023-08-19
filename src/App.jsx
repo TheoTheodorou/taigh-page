@@ -31,9 +31,11 @@ const AppRoutes = () => (
 function App() {
   return (
     <BrowserRouter>
-      <Navbar />
-      <AppRoutes />
-      <Footer />
+      <div className=" mx-auto max-w-screen-2xl">
+        <Navbar />
+        <AppRoutes />
+        <Footer />
+      </div>
     </BrowserRouter>
   );
 }

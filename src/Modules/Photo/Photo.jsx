@@ -101,7 +101,7 @@ export default function Photo() {
         componentsProps={(containerWidth) => ({
           imageProps: {
             loading: (containerWidth || 0) > 600 ? "eager" : "lazy",
-            className: "hover:animate-pulse",
+            className: "hover:animate-pulse cursor-pointer",
             onClick: (event) => handleImageClick(event.target.src),
           },
         })}
@@ -111,16 +111,16 @@ export default function Photo() {
         <div
           ref={modalRef}
           onClick={handleOutsideClick}
-          className="fixed left-0 top-0 z-50 flex h-screen w-screen items-center justify-center bg-black bg-opacity-75"
+          className="fixed left-0 top-0 z-50 flex h-screen w-screen items-center justify-center bg-black bg-opacity-90"
         >
           <div className="relative inline-block">
             <img
               src={selectedImage}
               alt="Selected"
-              className="max-w-screen max-h-screen object-contain"
+              className="max-w-screen f max-h-screen border-4 border-black border-opacity-10 object-contain shadow-lg"
             />
             <button
-              className="absolute right-0 top-0 z-10 cursor-pointer p-4"
+              className="absolute right-2 top-2 z-10 cursor-pointer rounded-full border border-white border-opacity-50 bg-black bg-opacity-50 p-0.5 shadow-lg"
               onClick={() => closeModal()}
             >
               <CloseIcon />
