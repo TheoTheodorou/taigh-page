@@ -15,10 +15,7 @@ const Home = () => {
     },
     {
       id: 2,
-      imageSrc: new URL(
-        "/src/Resources/photo/India_Couple.jpg",
-        import.meta.url
-      ).href,
+      imageSrc: new URL("/src/Resources/photo/7.jpg", import.meta.url).href,
       titleSrc: new URL(
         "/src/Resources/assets/photo_Banner.jpg",
         import.meta.url
