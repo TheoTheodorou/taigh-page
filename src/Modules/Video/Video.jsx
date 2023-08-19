@@ -77,6 +77,22 @@ const Video = () => {
 
   return (
     <div className="flex min-h-screen flex-col justify-center gap-20">
+      <img
+        className="mx-auto h-auto object-fill "
+        src={
+          new URL("/src/Resources/assets/Banner-3.jpg", import.meta.url).href
+        }
+        alt=""
+      />
+      <div className="bg-[#171717] pb-0 pt-20 lg:pt-0">
+        <VideoCard
+          title="TAIGH’S SHOWREEL"
+          subtitle="(2018-2023)"
+          src="https://www.youtube.com/embed/dtbOdfsX3Es"
+          textcol={"text-white"}
+        ></VideoCard>
+      </div>
+
       {cards.map((card, i) => (
         <VideoCard
           key={card.id}
@@ -84,7 +100,8 @@ const Video = () => {
           subtitle={card.subtitle}
           text={card.text}
           src={card.src}
-          alternate={i % 2 !== 0} // This will toggle the alternate prop for every card
+          alternate={i % 2 === 0} // This will toggle the alternate prop for every card
+          textcol={"text-black"}
         />
       ))}
     </div>

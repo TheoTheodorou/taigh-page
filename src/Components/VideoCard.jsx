@@ -1,8 +1,9 @@
 import React from "react";
 
-const VideoCardLeft = ({ src, title, subtitle, text, alternate }) => {
+const VideoCardLeft = ({ src, title, subtitle, text, alternate, textcol }) => {
   const textRef = React.useRef(null);
   const [isVisible, setIsVisible] = React.useState(false);
+  const [screenWidth, setScreenWidth] = React.useState(window.innerWidth);
 
   React.useEffect(() => {
     const observer = new IntersectionObserver(
@@ -27,6 +28,18 @@ const VideoCardLeft = ({ src, title, subtitle, text, alternate }) => {
     };
   }, []);
 
+  React.useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   const videoComponent = (
     <div className="relative mx-10 overflow-hidden pt-[56.25%] lg:static lg:mx-0 lg:w-[960px] lg:shrink-0 lg:overflow-auto lg:pt-0">
       <iframe
@@ -35,9 +48,9 @@ const VideoCardLeft = ({ src, title, subtitle, text, alternate }) => {
         height="540"
         src={src}
         title={title}
-        frameborder="0"
+        frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
-        allowfullscreen
+        allowFullScreen
         loading="lazy"
       ></iframe>
     </div>
@@ -45,12 +58,12 @@ const VideoCardLeft = ({ src, title, subtitle, text, alternate }) => {
 
   const textComponent = (
     <div
-      className={`gap-x-4 rounded-md py-10 opacity-0 ${
+      className={`gap-x-4 rounded-md py-10 opacity-0 ${textcol} ${
         isVisible ? "animate-fadeInUp opacity-100" : ""
       }`}
       ref={textRef}
     >
-      <div className="mx-auto flex min-h-full max-w-xl flex-col justify-center gap-y-8 p-10 text-center xl:text-left">
+      <div className="mx-auto flex min-h-full max-w-xl flex-col justify-center gap-y-8 p-10 text-center lg:py-0 xl:text-left">
         <h2 className="">{title}</h2>
         <h3 className="tracking-widest">{subtitle}</h3>
         <p className="whitespace-pre-wrap">{text}</p>
@@ -58,10 +71,12 @@ const VideoCardLeft = ({ src, title, subtitle, text, alternate }) => {
     </div>
   );
 
+  const shouldAlternate = alternate && screenWidth > 1500;
+
   return (
-    <div className="lg:flex lg:flex-wrap lg:justify-around">
-      {alternate ? textComponent : videoComponent}
-      {alternate ? videoComponent : textComponent}
+    <div className="lg:flex lg:flex-wrap lg:justify-around lg:py-24">
+      {shouldAlternate ? textComponent : videoComponent}
+      {shouldAlternate ? videoComponent : textComponent}
     </div>
   );
 };
