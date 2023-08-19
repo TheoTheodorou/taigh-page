@@ -86,7 +86,7 @@ const Video = () => {
       />
       <div className="bg-[#171717] pb-0 pt-20 lg:pt-0">
         <VideoCard
-          title="TAIGH’S SHOWREEL"
+          title="TAIGH'S SHOWREEL"
           subtitle="(2018-2023)"
           src="https://www.youtube.com/embed/dtbOdfsX3Es"
           textcol={"text-white"}

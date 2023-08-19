@@ -12,54 +12,27 @@ const Contact = React.lazy(() => import("./Modules/Contact/Contact"));
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
 
+// Consider creating a Loading component for better UX
+const Loading = () => <div>Loading...</div>;
+
+const AppRoutes = () => (
+  <React.Suspense fallback={"<Loading />"}>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/video" element={<Video />} />
+      <Route path="/photo" element={<Photo />} />
+      <Route path="/commercial" element={<Commercial />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/contact" element={<Contact />} />
+    </Routes>
+  </React.Suspense>
+);
+
 function App() {
   return (
     <BrowserRouter>
       <Navbar />
-
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route
-          path="/video"
-          element={
-            <React.Suspense fallback="Loading...">
-              <Video />
-            </React.Suspense>
-          }
-        />
-        <Route
-          path="/photo"
-          element={
-            <React.Suspense fallback="Loading...">
-              <Photo />
-            </React.Suspense>
-          }
-        />
-        <Route
-          path="/commercial"
-          element={
-            <React.Suspense fallback="Loading...">
-              <Commercial />
-            </React.Suspense>
-          }
-        />
-        <Route
-          path="/about"
-          element={
-            <React.Suspense fallback="Loading...">
-              <About />
-            </React.Suspense>
-          }
-        />
-        <Route
-          path="/contact"
-          element={
-            <React.Suspense fallback="Loading...">
-              <Contact />
-            </React.Suspense>
-          }
-        />
-      </Routes>
+      <AppRoutes />
       <Footer />
     </BrowserRouter>
   );
