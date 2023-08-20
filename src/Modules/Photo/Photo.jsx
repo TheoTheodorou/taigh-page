@@ -2,6 +2,32 @@ import React, { useState, useEffect, useRef } from "react";
 
 import PhotoAlbum from "react-photo-album";
 
+import photo1_small from "/src/Resources/photo/1-small.jpg";
+import photo2_small from "/src/Resources/photo/2-small.jpg";
+import photo3_small from "/src/Resources/photo/3-small.jpg";
+import photo4_small from "/src/Resources/photo/4-small.jpg";
+import photo5_small from "/src/Resources/photo/5-small.jpg";
+import photo6_small from "/src/Resources/photo/6-small.jpg";
+import photo7_small from "/src/Resources/photo/7-small.jpg";
+import photo8_small from "/src/Resources/photo/8-small.jpg";
+import photo9_small from "/src/Resources/photo/9-small.jpg";
+import photo10_small from "/src/Resources/photo/10-small.jpg";
+import photo11_small from "/src/Resources/photo/11-small.jpg";
+import photo12_small from "/src/Resources/photo/12-small.jpg";
+import photo13_small from "/src/Resources/photo/13-small.jpg";
+import photo14_small from "/src/Resources/photo/14-small.jpg";
+import photo15_small from "/src/Resources/photo/15-small.jpg";
+import photo16_small from "/src/Resources/photo/16-small.jpg";
+import photo17_small from "/src/Resources/photo/17-small.jpg";
+import photo18_small from "/src/Resources/photo/18-small.jpg";
+import photo19_small from "/src/Resources/photo/19-small.jpg";
+import photo20_small from "/src/Resources/photo/20-small.jpg";
+import photo21_small from "/src/Resources/photo/21-small.jpg";
+import photo22_small from "/src/Resources/photo/22-small.jpg";
+import photo23_small from "/src/Resources/photo/23-small.jpg";
+import photo24_small from "/src/Resources/photo/24-small.jpg";
+import photo25_small from "/src/Resources/photo/25-small.jpg";
+
 // Importing each photo explicitly
 import photo1 from "/src/Resources/photo/1.jpg";
 import photo2 from "/src/Resources/photo/2.jpg";
@@ -31,32 +57,60 @@ import photo25 from "/src/Resources/photo/25.jpg";
 
 import CloseIcon from "/src/Resources/assets/CloseIcon.jsx";
 
-const photos = [
-  { src: photo1, width: 4504, height: 3378 },
-  { src: photo2, width: 4504, height: 3378 },
-  { src: photo3, width: 5184, height: 2614 },
-  { src: photo4, width: 1528, height: 2037 },
-  { src: photo5, width: 4672, height: 7008 },
-  { src: photo6, width: 4672, height: 7008 },
-  { src: photo7, width: 3840, height: 2160 },
-  { src: photo8, width: 2574, height: 3432 },
-  { src: photo9, width: 3840, height: 2160 },
-  { src: photo10, width: 4679, height: 3509 },
-  { src: photo11, width: 2684, height: 3579 },
-  { src: photo12, width: 3735, height: 2801 },
-  { src: photo13, width: 5184, height: 3888 },
-  { src: photo14, width: 5184, height: 2920 },
-  { src: photo15, width: 4158, height: 2611 },
-  { src: photo16, width: 2338, height: 3117 },
-  { src: photo17, width: 4080, height: 2758 },
-  { src: photo18, width: 1274, height: 1292 },
-  { src: photo19, width: 2810, height: 3513 },
-  { src: photo20, width: 2822, height: 3528 },
-  { src: photo21, width: 1564, height: 1955 },
-  { src: photo22, width: 2527, height: 3369 },
-  { src: photo23, width: 2916, height: 3888 },
-  { src: photo24, width: 1982, height: 2477 },
-  { src: photo25, width: 2008, height: 2510 },
+const small_photos = [
+  { id: 1, src: photo1_small, width: 400, height: 300 },
+  { id: 2, src: photo2_small, width: 400, height: 300 },
+  { id: 3, src: photo3_small, width: 595, height: 300 },
+  { id: 4, src: photo4_small, width: 300, height: 400 },
+  { id: 5, src: photo5_small, width: 300, height: 450 },
+  { id: 6, src: photo6_small, width: 300, height: 450 },
+  { id: 7, src: photo7_small, width: 533, height: 300 },
+  { id: 8, src: photo8_small, width: 300, height: 400 },
+  { id: 9, src: photo9_small, width: 533, height: 300 },
+  { id: 10, src: photo10_small, width: 400, height: 300 },
+  { id: 11, src: photo11_small, width: 300, height: 400 },
+  { id: 12, src: photo12_small, width: 400, height: 300 },
+  { id: 13, src: photo13_small, width: 400, height: 300 },
+  { id: 14, src: photo14_small, width: 533, height: 300 },
+  { id: 15, src: photo15_small, width: 478, height: 300 },
+  { id: 16, src: photo16_small, width: 300, height: 400 },
+  { id: 17, src: photo17_small, width: 444, height: 300 },
+  { id: 18, src: photo18_small, width: 300, height: 375 },
+  { id: 19, src: photo19_small, width: 300, height: 375 },
+  { id: 20, src: photo20_small, width: 300, height: 375 },
+  { id: 21, src: photo21_small, width: 300, height: 375 },
+  { id: 22, src: photo22_small, width: 300, height: 400 },
+  { id: 23, src: photo23_small, width: 300, height: 400 },
+  { id: 24, src: photo24_small, width: 300, height: 375 },
+  { id: 25, src: photo25_small, width: 300, height: 375 },
+];
+
+const large_photos = [
+  { id: 1, src: photo1, width: 1351, height: 1013 },
+  { id: 2, src: photo2, width: 1351, height: 1013 },
+  { id: 3, src: photo3, width: 2000, height: 1008 },
+  { id: 4, src: photo4, width: 458, height: 611 },
+  { id: 5, src: photo5, width: 1600, height: 2400 },
+  { id: 6, src: photo6, width: 1548, height: 2323 },
+  { id: 7, src: photo7, width: 1600, height: 900 },
+  { id: 8, src: photo8, width: 772, height: 1030 },
+  { id: 9, src: photo9, width: 1152, height: 648 },
+  { id: 10, src: photo10, width: 1404, height: 1053 },
+  { id: 11, src: photo11, width: 805, height: 1074 },
+  { id: 12, src: photo12, width: 1121, height: 840 },
+  { id: 13, src: photo13, width: 1555, height: 1166 },
+  { id: 14, src: photo14, width: 1555, height: 876 },
+  { id: 15, src: photo15, width: 1247, height: 783 },
+  { id: 16, src: photo16, width: 701, height: 935 },
+  { id: 17, src: photo17, width: 1600, height: 1082 },
+  { id: 18, src: photo18, width: 382, height: 478 },
+  { id: 19, src: photo19, width: 843, height: 1054 },
+  { id: 20, src: photo20, width: 847, height: 1058 },
+  { id: 21, src: photo21, width: 469, height: 587 },
+  { id: 22, src: photo22, width: 758, height: 1011 },
+  { id: 23, src: photo23, width: 875, height: 1166 },
+  { id: 24, src: photo24, width: 595, height: 743 },
+  { id: 25, src: photo25, width: 602, height: 753 },
 ];
 
 export default function Photo() {
@@ -75,10 +129,13 @@ export default function Photo() {
     setIsImageLoaded(true);
   };
 
-  const handleImageClick = (imageSrc) => {
-    setSelectedImage(imageSrc);
-    setIsModalOpen(true);
-    setIsImageLoaded(false); // Reset the image loaded state when closing the modal
+  const handleImageClick = (id) => {
+    const largeImage = large_photos[id];
+    if (largeImage) {
+      setSelectedImage(largeImage.src);
+      setIsModalOpen(true);
+      setIsImageLoaded(false);
+    }
   };
 
   const closeModal = () => {
@@ -102,13 +159,16 @@ export default function Photo() {
   return (
     <div>
       <PhotoAlbum
-        layout="rows"
-        photos={photos}
+        layout="columns"
+        photos={small_photos}
+        onClick={({ index }) => {
+          console.log("Clicked on photo", index);
+          handleImageClick(index);
+        }}
         componentsProps={(containerWidth) => ({
           imageProps: {
             loading: (containerWidth || 0) > 600 ? "eager" : "lazy",
             className: "hover:animate-pulse cursor-pointer",
-            onClick: (event) => handleImageClick(event.target.src),
           },
         })}
       />
@@ -128,7 +188,7 @@ export default function Photo() {
             />
             {isImageLoaded && (
               <button
-                className="absolute right-2 top-2 z-10 cursor-pointer rounded-full border border-white border-opacity-50 bg-black bg-opacity-50 p-0.5 shadow-lg"
+                className="absolute right-3 top-3 z-10 flex h-6 w-6 transform cursor-pointer items-center justify-center rounded-full border border-white border-opacity-50 bg-black bg-opacity-50 p-0.5 shadow-lg transition hover:scale-110"
                 onClick={() => closeModal()}
               >
                 <CloseIcon />
