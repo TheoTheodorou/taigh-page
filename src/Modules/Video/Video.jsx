@@ -79,11 +79,6 @@ const Video = () => {
     if (src.includes("youtube")) {
       const videoId = src.split("embed/")[1];
       return `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
-    } else if (src.includes("vimeo")) {
-      const videoId = src.split("video/")[1].split("?")[0];
-      // For Vimeo, you'd typically need to use their API to get thumbnails,
-      // but for simplicity, we'll return a placeholder here.
-      return `https://vumbnail.com/${videoId}.jpg`;
     }
     return ""; // Default thumbnail if none matches
   };

@@ -15,7 +15,7 @@ const VideoCardLeft = ({ src, title, subtitle, text, alternate, textcol }) => {
         }
       },
       {
-        rootMargin: "-200px 0px -200px 0px",
+        rootMargin: "-100px 0px -100px 0px",
       }
     );
 
@@ -26,7 +26,7 @@ const VideoCardLeft = ({ src, title, subtitle, text, alternate, textcol }) => {
         }
       },
       {
-        rootMargin: "200px 0px 200px 0px",
+        rootMargin: "400px 0px 400px 0px",
       }
     );
 
@@ -66,7 +66,7 @@ const VideoCardLeft = ({ src, title, subtitle, text, alternate, textcol }) => {
       ref={videoRef}
     >
       <iframe
-        className="absolute left-0 top-0 h-full w-full rounded-xl border-0 lg:static lg:left-auto lg:top-auto lg:min-h-[540px]"
+        className="absolute left-0 top-0 h-full w-full border-0 lg:static lg:left-auto lg:top-auto lg:min-h-[540px]"
         width="960"
         height="540"
         src={src}
@@ -74,17 +74,13 @@ const VideoCardLeft = ({ src, title, subtitle, text, alternate, textcol }) => {
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
         allowFullScreen
-        loading="lazy"
       ></iframe>
     </div>
   ) : (
     <div
       className="relative mx-10 overflow-hidden pt-[56.25%] lg:static lg:mx-0 lg:w-[960px] lg:shrink-0 lg:overflow-auto lg:pt-0"
       ref={videoRef}
-    >
-      {/* Placeholder for the video until it's in the viewport */}
-      <div className="absolute left-0 top-0 h-full w-full rounded-xl bg-gray-200"></div>
-    </div>
+    ></div>
   );
 
   const textComponent = (

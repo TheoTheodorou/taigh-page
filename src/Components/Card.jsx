@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function Card(props) {
   return (
     <div className="group relative">
-      <div className="  relative h-auto w-full overflow-hidden rounded-lg bg-white group-hover:opacity-75 ">
+      <div className="  relative h-auto w-full overflow-hidden bg-white group-hover:opacity-75 ">
         <Link to={props.href}>
           <img
             src={props.imageSrc}

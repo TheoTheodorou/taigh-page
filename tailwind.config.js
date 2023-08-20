@@ -7,7 +7,7 @@ export default {
         poppins: ["Poppins", "sans-serif"],
       },
       animation: {
-        fadeInUp: "fadeInUp 1s ease-linear",
+        fadeInUp: "fadeInUp 1s ease-in-out",
       },
     },
   },
