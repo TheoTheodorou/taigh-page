@@ -62,7 +62,7 @@ const VideoCardLeft = ({ src, title, subtitle, text, alternate, textcol }) => {
 
   const videoComponent = isVideoVisible ? (
     <div
-      className="relative mx-10 overflow-hidden pt-[56.25%] lg:static lg:mx-0 lg:w-[960px] lg:shrink-0 lg:overflow-auto lg:pt-0"
+      className="relative mx-6 overflow-hidden pt-[56.25%] lg:static lg:mx-0 lg:w-[960px] lg:shrink-0 lg:overflow-auto lg:pt-0"
       ref={videoRef}
     >
       <iframe
@@ -78,7 +78,7 @@ const VideoCardLeft = ({ src, title, subtitle, text, alternate, textcol }) => {
     </div>
   ) : (
     <div
-      className="relative mx-10 overflow-hidden pt-[56.25%] lg:static lg:mx-0 lg:w-[960px] lg:shrink-0 lg:overflow-auto lg:pt-0"
+      className="relative mx-6 overflow-hidden pt-[56.25%] lg:static lg:mx-0 lg:w-[960px] lg:shrink-0 lg:overflow-auto lg:pt-0"
       ref={videoRef}
     ></div>
   );
@@ -101,7 +101,7 @@ const VideoCardLeft = ({ src, title, subtitle, text, alternate, textcol }) => {
   const shouldAlternate = alternate && screenWidth > 1500;
 
   return (
-    <div className="lg:flex lg:flex-wrap lg:justify-around lg:py-24">
+    <div className="lg:flex lg:flex-wrap lg:justify-around lg:py-16">
       {shouldAlternate ? textComponent : videoComponent}
       {shouldAlternate ? videoComponent : textComponent}
     </div>

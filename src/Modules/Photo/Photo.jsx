@@ -168,7 +168,7 @@ export default function Photo() {
         componentsProps={(containerWidth) => ({
           imageProps: {
             loading: (containerWidth || 0) > 600 ? "eager" : "lazy",
-            className: "hover:animate-pulse cursor-pointer",
+            className: "hover:opacity-90 cursor-pointer bg-gray-100",
           },
         })}
       />
