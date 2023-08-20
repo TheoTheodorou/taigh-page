@@ -75,6 +75,19 @@ const Video = () => {
     },
   ];
 
+  const getThumbnailUrl = (src) => {
+    if (src.includes("youtube")) {
+      const videoId = src.split("embed/")[1];
+      return `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+    } else if (src.includes("vimeo")) {
+      const videoId = src.split("video/")[1].split("?")[0];
+      // For Vimeo, you'd typically need to use their API to get thumbnails,
+      // but for simplicity, we'll return a placeholder here.
+      return `https://vumbnail.com/${videoId}.jpg`;
+    }
+    return ""; // Default thumbnail if none matches
+  };
+
   return (
     <div className="flex min-h-screen flex-col justify-center gap-20">
       <img
@@ -100,6 +113,7 @@ const Video = () => {
           subtitle={card.subtitle}
           text={card.text}
           src={card.src}
+          thumbnail={getThumbnailUrl(card.src)} // Add this line
           alternate={i % 2 === 0} // This will toggle the alternate prop for every card
           textcol={"text-black"}
         />

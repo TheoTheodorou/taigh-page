@@ -2,7 +2,9 @@ import React from "react";
 
 const VideoCardLeft = ({ src, title, subtitle, text, alternate, textcol }) => {
   const textRef = React.useRef(null);
+  const videoRef = React.useRef(null);
   const [isVisible, setIsVisible] = React.useState(false);
+  const [isVideoVisible, setIsVideoVisible] = React.useState(false);
   const [screenWidth, setScreenWidth] = React.useState(window.innerWidth);
 
   React.useEffect(() => {
@@ -13,7 +15,18 @@ const VideoCardLeft = ({ src, title, subtitle, text, alternate, textcol }) => {
         }
       },
       {
-        rootMargin: "-200px 0px -200px 0px", // Adjust these values as needed
+        rootMargin: "-200px 0px -200px 0px",
+      }
+    );
+
+    const videoObserver = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setIsVideoVisible(true);
+        }
+      },
+      {
+        rootMargin: "200px 0px 200px 0px",
       }
     );
 
@@ -21,9 +34,16 @@ const VideoCardLeft = ({ src, title, subtitle, text, alternate, textcol }) => {
       observer.observe(textRef.current);
     }
 
+    if (videoRef.current) {
+      videoObserver.observe(videoRef.current);
+    }
+
     return () => {
       if (textRef.current) {
         observer.unobserve(textRef.current);
+      }
+      if (videoRef.current) {
+        videoObserver.unobserve(videoRef.current);
       }
     };
   }, []);
@@ -40,8 +60,11 @@ const VideoCardLeft = ({ src, title, subtitle, text, alternate, textcol }) => {
     };
   }, []);
 
-  const videoComponent = (
-    <div className="relative mx-10 overflow-hidden pt-[56.25%] lg:static lg:mx-0 lg:w-[960px] lg:shrink-0 lg:overflow-auto lg:pt-0">
+  const videoComponent = isVideoVisible ? (
+    <div
+      className="relative mx-10 overflow-hidden pt-[56.25%] lg:static lg:mx-0 lg:w-[960px] lg:shrink-0 lg:overflow-auto lg:pt-0"
+      ref={videoRef}
+    >
       <iframe
         className="absolute left-0 top-0 h-full w-full rounded-xl border-0 lg:static lg:left-auto lg:top-auto lg:min-h-[540px]"
         width="960"
@@ -53,6 +76,14 @@ const VideoCardLeft = ({ src, title, subtitle, text, alternate, textcol }) => {
         allowFullScreen
         loading="lazy"
       ></iframe>
+    </div>
+  ) : (
+    <div
+      className="relative mx-10 overflow-hidden pt-[56.25%] lg:static lg:mx-0 lg:w-[960px] lg:shrink-0 lg:overflow-auto lg:pt-0"
+      ref={videoRef}
+    >
+      {/* Placeholder for the video until it's in the viewport */}
+      <div className="absolute left-0 top-0 h-full w-full rounded-xl bg-gray-200"></div>
     </div>
   );
 
