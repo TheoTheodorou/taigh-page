@@ -70,9 +70,14 @@ export default function Photo() {
     }
   };
 
+  const handleImageLoad = () => {
+    setIsImageLoaded(true);
+  };
+
   const handleImageClick = (imageSrc) => {
     setSelectedImage(imageSrc);
     setIsModalOpen(true);
+    setIsImageLoaded(false); // Reset the image loaded state when closing the modal
   };
 
   const closeModal = () => {
@@ -117,6 +122,7 @@ export default function Photo() {
             <img
               src={selectedImage}
               alt="Selected"
+              onLoad={handleImageLoad}
               className="max-w-screen f max-h-screen border-4 border-black border-opacity-10 object-contain shadow-lg"
             />
             <button
