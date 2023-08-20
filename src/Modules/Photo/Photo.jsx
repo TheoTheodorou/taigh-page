@@ -62,6 +62,7 @@ const photos = [
 export default function Photo() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
   const modalRef = useRef(null);
 
   const handleOutsideClick = (e) => {
@@ -125,12 +126,14 @@ export default function Photo() {
               onLoad={handleImageLoad}
               className="max-w-screen f max-h-screen border-4 border-black border-opacity-10 object-contain shadow-lg"
             />
-            <button
-              className="absolute right-2 top-2 z-10 cursor-pointer rounded-full border border-white border-opacity-50 bg-black bg-opacity-50 p-0.5 shadow-lg"
-              onClick={() => closeModal()}
-            >
-              <CloseIcon />
-            </button>
+            {isImageLoaded && (
+              <button
+                className="absolute right-2 top-2 z-10 cursor-pointer rounded-full border border-white border-opacity-50 bg-black bg-opacity-50 p-0.5 shadow-lg"
+                onClick={() => closeModal()}
+              >
+                <CloseIcon />
+              </button>
+            )}
           </div>
         </div>
       )}
