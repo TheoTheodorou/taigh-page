@@ -85,12 +85,12 @@ const VideoCardLeft = ({ src, title, subtitle, text, alternate, textcol }) => {
 
   const textComponent = (
     <div
-      className={`gap-x-4 rounded-md py-10 opacity-0 ${textcol} ${
+      className={`gap-x-4 rounded-md py-6 opacity-0 ${textcol} ${
         isVisible ? "animate-fadeInUp opacity-100" : ""
       }`}
       ref={textRef}
     >
-      <div className="mx-auto flex min-h-full max-w-xl flex-col justify-center gap-y-8 p-10 text-center lg:py-0 xl:text-left">
+      <div className="mx-auto flex min-h-full max-w-xl flex-col justify-center gap-y-4 p-6 text-center lg:py-0 xl:text-left">
         <h2 className="">{title}</h2>
         <h3 className="tracking-widest">{subtitle}</h3>
         <p className="whitespace-pre-wrap">{text}</p>

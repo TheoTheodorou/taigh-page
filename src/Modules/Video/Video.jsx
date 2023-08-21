@@ -85,14 +85,7 @@ const Video = () => {
 
   return (
     <div className="flex min-h-screen flex-col justify-center gap-20">
-      <img
-        className="mx-auto h-auto object-fill "
-        src={
-          new URL("/src/Resources/assets/Banner-3.jpg", import.meta.url).href
-        }
-        alt=""
-      />
-      <div className="bg-[#171717] pb-0 pt-20 lg:pt-0">
+      <div className="bg-[#171717] pt-10 lg:pt-0">
         <VideoCard
           title="TAIGH'S SHOWREEL"
           subtitle="(2018-2023)"

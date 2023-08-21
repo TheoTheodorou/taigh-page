@@ -32,9 +32,13 @@ function App() {
   return (
     <BrowserRouter>
       <div className=" mx-auto max-w-screen-2xl">
-        <Navbar />
-        <AppRoutes />
-        <Footer />
+        <div className="flex min-h-screen flex-col">
+          <div className="flex-grow">
+            <Navbar />
+            <AppRoutes />
+          </div>
+          <Footer />
+        </div>
       </div>
     </BrowserRouter>
   );

@@ -25,21 +25,10 @@ const Home = () => {
   ];
 
   return (
-    <div className="">
-      <img
-        className="mx-auto h-auto object-fill "
-        src={
-          new URL("/src/Resources/assets/Banner-3.jpg", import.meta.url).href
-        }
-        alt=""
-      />
-      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="xl:gap-x-30 mt-6 space-y-12 lg:grid lg:grid-cols-2 lg:gap-x-20 lg:space-y-0">
-          {cards.map((card) => (
-            <Card key={card.id} {...card} />
-          ))}
-        </div>
-      </div>
+    <div className="xl:gap-x-30 mt-6 space-y-12 p-8 lg:grid lg:grid-cols-2 lg:gap-x-20 lg:space-y-0">
+      {cards.map((card) => (
+        <Card key={card.id} {...card} />
+      ))}
     </div>
   );
 };
